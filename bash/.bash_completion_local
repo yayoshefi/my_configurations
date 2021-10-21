@@ -1,0 +1,65 @@
+#!/usr/bash
+
+# Based on:
+# https://iridakos.com/tutorials/2018/03/01/bash-programmable-completion-tutorial.html
+
+# USE HowTos directory for all manuals
+function howto() {
+    if [[ $1 =~ \.md$ ]]; then
+        typora ~/HowTos/$1 ;
+    else
+        less ~/HowTos/$1; 
+    fi
+}
+function _completion_howto() {
+  # retutn noting in second word
+  if [ "${#COMP_WORDS[@]}" != "2" ]; then
+    return
+  fi
+  COMPREPLY=($(compgen -W "$(ls ~/HowTos)" -- "${COMP_WORDS[1]}"));
+}
+complete -F _completion_howto howto
+
+
+function idea_dlp() {
+    if [[ $1 =~ \.md$ ]]; then
+        typora ~/Documents/dlp/$1 ;
+    else
+        less ~/Documents/dlp/$1; 
+    fi
+}
+function _completion_idea_dlp() {
+  # retutn noting in second word
+  if [ "${#COMP_WORDS[@]}" != "2" ]; then
+    return
+  fi
+  COMPREPLY=($(compgen -W "$(ls ~/Documents/dlp)" -- "${COMP_WORDS[1]}"));
+}
+complete -F _completion_idea_dlp idea_dlp
+
+
+function activate-venv() { pushd ~/virtual_env/$1; source bin/activate; popd;}
+function _completion_venv() {
+    COMPREPLY=($(compgen -W "$(ls ~/virtual_env)" -- "${COMP_WORDS[1]}"));
+}
+complete -F _completion_venv activate-venv
+
+# Some testing function to check how complete works or not
+function _completion_testing() {
+    COMPREPLY=( a b c )
+}
+
+_complete_tutorial() {
+  # https://blog.bouzekri.net/2017-01-28-custom-bash-autocomplete-script.html
+  COMPREPLY=()
+  echo ""
+  echo "COMP_WORDS : ${COMP_WORDS}"
+  echo "COMP_CWORD : ${COMP_CWORD}"
+  echo "COMP_WORDS[COMP_CWORD] : ${COMP_WORDS[COMP_CWORD]}"
+  echo "COMP_LINE : ${COMP_LINE}"
+  echo "COMP_POINT : ${COMP_POINT}"
+  echo "COMP_KEY : ${COMP_KEY}"
+  echo "COMP_TYPE : ${COMP_TYPE}"
+  echo "args : $@"
+  echo "reply : ${COMPREPLY}"
+}

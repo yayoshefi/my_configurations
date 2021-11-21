@@ -60,3 +60,7 @@ end
 function commits-spark  -d "creates a spark of authors"
     git log --author="$argv" --format=format:%ad --date=short | uniq -c | awk '{print $1}' | spark | lolcat
 end
+
+funntion history-spark -d "print a histogram of recent histoty commands"
+    history | cut -f 1  -d ' ' | uniq -c | awk '{print$1}' | spark | lolcat
+end

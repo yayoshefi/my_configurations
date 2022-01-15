@@ -1,7 +1,8 @@
 # THIS FILE IS SIMILAR TO THE BASH_LOCAL...
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    figlet "SHEFI @ FISH DLP" -w $COLUMNS | lolcat --animate --duration 2  --freq 1 --spread 5
+    # figlet "SHEFI @ FISH DLP" -w $COLUMNS | lolcat --animate --duration 1  --freq 1 --spread 5
+    shira-greeting | lolcat  --freq 1 --spread 5
 end
 
 

@@ -26,6 +26,7 @@ function pip-dtlpy  -d "install dtlpy directly from dtlpy gcs bucket TODO NEED D
     python -m pip install $whl_path --upgrade
 
     echo -e "\n installed version $maj.$minor.$patch"
+    echo -e "COMMAND: 'python -m pip install $whl_path --upgrde'"
 end
 
 
@@ -43,8 +44,8 @@ end
 
 function howto -d "open How To files for read or edit" -a fl
     if test "$fl" = '*.md'
-        typora $fl
+        typora "$HOME/HowTos/$fl"
     else
-        less $fl
+        less "$HOME/HowTos/$fl"
     end
 end

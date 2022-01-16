@@ -1,0 +1,4 @@
+
+running a docker 
+name the docker for ease of re-attaching
+sudo docker run -it  --runtime=nvidia --name=tensor_rt  -v /home/yair/ws_1/shop:/shop -v /home/yair/repos/:/repos de065555c278

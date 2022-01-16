@@ -1,0 +1,36 @@
+1) check when did the system last reboot
+$ uptime   - <curr_time> up <time since last boot> .....
+OR
+$ last reboot
+($ who -b is least preffered)
+
+2) open Image Viewer and default programs:
+$ eog <image_path>     # opens Image Viewer
+$ xdg-open <file_path> # open file with default program
+
+3) Hard Disks and mounts
+gui for disks is at <Win-Key>-a  open disks
+select the required disk - select the required partition
+you can fix the Read-only premission using this gui
+Auto mount (at FS startup) go to Cog-wheel-icon -> Edit Mount option ->
+        -> user session Defaults to OFF
+
+4) Ubuntu defaults: 
+    a) set the x-terminal sym link to point there (system wide confing)
+    $ sudo update-alternatives --config x-terminal-emulator
+    ==> then choose the selection number of the desired terminal, and enter
+    OR
+    b) set gnome to be default
+    gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
+
+5) Resize and move
+    Alt-F7 : then move by cursor or mouse
+    Alt+F8 : them resize by cursor or mouse
+
+6) Network problems
+to connect (raise) one on the network cards
+$ ifconfig -a
+$ ifconfig <name> down / up
+exmple : raise the ethernet cable card
+ifconfig enp60s0 up
+

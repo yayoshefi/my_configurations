@@ -1,0 +1,7 @@
+Set font:
+=========
+$ figlet -f <font_name> msg
+
+# all fonts are at: /usr/share/figlet
+$ ls /usr/share/figlet
+

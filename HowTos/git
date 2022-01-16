@@ -1,0 +1,46 @@
+NOTE some of these how to's should be transformed into alias one day
+
+* list all files that were commited in a commit
+* =============================================
+$ git show --stat --oneline <SHA-key>   
+# optionala:
+    replace --stat with --name-only
+    --format=short  (instead of oneline)
+
+$ git diff-tree --no-commit-id --name-only -r  <SHA-key>
+
+
+* When the pull (or merge) fails due to uncommited changes
+* ========================================================
+# Best is to commit then merge; Or use stash (to save a stash then load it to merge)
+$ git stash save "<add-stash-name-or-comment-and-date"
+$ git merge
+$ git stash pop   # then use the mergetool if needed, also possible to use $ git stash apply  - to keep the stash
+
+
+* Checkout by date:
+* =================
+git checkout $(git rev-list -n 1 --before="2019-12-27 13:37" develop)
+
+* which git branch
+git rev-parse --abbrev-ref HEAD
+* which base dir of the git
+git rev-parse --show-toplevel
+
+
+* save the git cerdentials:
+* =========================
+
+git config credential.helper store  // add the --global to affect all repos
+// git config  --global credential.helper 'store --file ~/.my-credentials'  // add the --global to affect all repos
+
+
+* Create new branch
+====================
+$ git checkout -b <new_branch_name>  # create new branch locally
+$ git push origin <new_branch_name>  # push the branch to remote (sometines it will be needed at add -u - set-upstream)
+
+* delete branch
+===============
+$ git branch -d <branch_name>   # delete locally
+$ git push origin --delete  <rbranch_name>  # delete remotely  - use the local branch name..

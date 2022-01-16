@@ -1,0 +1,35 @@
+1)pretty json 
+    - use json_pp
+$ cat <source> |  json_pp -f json -json_opt pretty,utf8,allow_bignum -t dumper | less
+
+2) open Image Viewer and default programs:
+$ eog <image_path>     # opens Image Viewer
+$ xdg-open <file_path> # open file with default program
+
+3) cut a file from certain line or pattern 
+$ sed -n '/<pattern>/,$p' /path/to/file | l
+
+4) Reading through a file - best way cycle the file line by line (ignoring white spcae etc
+
+$ cat file.txt | while read line; do
+> echo $line
+> done
+
+5) using grep as conditional (if grep found do something)
+$ if `grep -q -- '"${patt}"' file.txt; then
+> echo "FOUND"
+> done
+
+6) Expandin function (path to script ...)
+$  type <function|script_name>
+
+7) manually set title to window
+$ TITLE="abcd"
+$ PS1="${PS1}\[\e]2;${TITLE}\a\]"
+
+8) redirect stderr and steout to tee
+$ command 2>&1 | tee log.log
+# The 2>&1 redirect stderr into stdout then use pipe
+
+$ command > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
+# This does the same in the long way...

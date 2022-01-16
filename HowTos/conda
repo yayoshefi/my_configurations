@@ -1,0 +1,11 @@
+# Create new env
+$ conda create --name <env-name> python=3.6
+# conda info # view the info of the env
+
+
+# Add variables to the conda enviorment
+# =====================================
+$ conda env config vars list
+$ conda env config vars set name=value  // PYTHONNOUSERSITE=1 to disable the local site packages
+$ conda env config vars unset name
+

@@ -1,0 +1,77 @@
+{
+    // "docker.host": "ssh://shira@192.168.1.34",
+    "docker.host": "ssh://shira@172.18.0.1",
+
+
+    "python.languageServer": "Pylance",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleEnabled": true,
+    "python.formatting.provider": "autopep8",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
+    "python.linting.pycodestyleArgs": [
+        "--max-line-length=120",
+    ],
+    "python.linting.pylintArgs": [
+        "--max-line-length=180"
+    ],
+    "python.formatting.autopep8Args": [
+        "--max-line-length=180"
+    ],
+
+    "diffEditor.ignoreTrimWhitespace": false,
+    "tabnine.experimentalAutoImports": true,
+    "kite.showWelcomeNotificationOnStartup": false,
+    "sonarlint.ls.javaHome": "/home/shira/.vscode/extensions/sonarsource.sonarlint_managed-jre/jre/jdk-11.0.11+9-jre",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+    
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "files.hotExit": "onExitAndWindowClose",
+    
+    "editor.fontLigatures": true,
+    "emmet.triggerExpansionOnTab": true,
+    "editor.suggestSelection": "first",
+    "editor.wordWrap": "on",
+    "diffEditor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
+    "editor.wrappingIndent": "deepIndent",
+    "editor.suggest.showStatusBar": true,
+    "editor.suggest.insertMode": "insert",
+    "editor.links": true,
+    "editor.minimap.showSlider": "always",
+    "editor.renderIndentGuides": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.renderWhitespace": "all",
+    "editor.smoothScrolling": true,
+    "editor.dragAndDrop": true,
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.wordBasedSuggestions": true,
+
+
+    
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.pinnedTabSizing": "normal",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Horizon Italic",
+    "workbench.colorCustomizations": {"[Horizon Italic]": {
+        "tab.lastPinnedBorder": "#00ff9d"
+    }},
+    "workbench.editor.closeOnFileDelete": false,
+    "workbench.editor.revealIfOpen": true,
+    "workbench.list.smoothScrolling": true,
+    "breadcrumbs.enabled": true,
+    "window.openFilesInNewWindow": "off",
+
+
+    "debug.inlineValues": true,
+    "debug.showInStatusBar": "always",
+    "debug.toolBarLocation": "floating",
+
+    ""
+}
